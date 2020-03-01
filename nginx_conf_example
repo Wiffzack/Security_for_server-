@@ -23,7 +23,9 @@ server {
     add_header Content-Security-Policy "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/ https://code.jquery.com/ https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.$
 
     add_header Feature-Policy "geolocation none;midi none;notifications none;push none;sync-xhr none;microphone none;camera none;magnetometer none;gyroscope none;speaker self;vibrate none;$
-    add_header 'Access-Control-Allow-Origin' 'https://your.website';
+    # I dont recommend to configure Access-Control-Allow-Origin in nginx 
+    # do it in .htaccess 
+    #add_header 'Access-Control-Allow-Origin' 'https://your.website';
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
     add_header X-Content-Type-Options "nosniff" always;
