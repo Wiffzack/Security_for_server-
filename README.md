@@ -23,3 +23,7 @@ openssl rsa -in your-key-file.key -outform der -pubout | openssl dgst -sha256 -b
 openssl req -in my-signing-request.csr -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
 openssl x509 -in my-certificate.crt -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
 ```
+In your Nginx config:
+```
+add_header Public-Key-Pins 'pin-sha256="from_your_certificate.crt"; pin-sha256="from_your_backup.crt"; max-age=5184000; includeSubDomains';
+```
