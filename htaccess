@@ -1,0 +1,31 @@
+
+
+# disable directory browsing
+Options All -Indexes
+
+#For Subfolder
+#Options +Indexes
+
+Order Allow,Deny
+Allow from all
+
+Header set Access-Control-Allow-Origin "https://your_website"
+
+#Download
+<Files /var/www/html/Downloads/some_file_to_download>
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
+</Files>
+
+<FilesMatch ".(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+        Order Allow,Deny
+        Deny from all
+</FilesMatch>
+
+# if you need some cross origin exceptions:
+<IfModule mod_headers.c>
+        <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|js)$">
+                #Header set Access-Control-Allow-Origin "https://wiffzack.ddns.net"
+        </FilesMatch>
+</IfModule>
+
