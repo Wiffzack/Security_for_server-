@@ -1,7 +1,9 @@
 # Security_for_server-
 
 Nginx CORS configuration:
-[Content Security Policy](https://wiki.selfhtml.org/wiki/Sicherheit/Content_Security_Policy)
+
+
+# [Content Security Policy](https://wiki.selfhtml.org/wiki/Sicherheit/Content_Security_Policy)
 ```
 openssl dgst -sha256 -binary jquery-3.3.1.min.js | openssl base64 -A
 ```
@@ -15,7 +17,7 @@ In your site:
 
 ```
 
-[HTTP Public Key Pinning (HPKP)](https://developer.mozilla.org/de/docs/Web/Security/Public_Key_Pinning)
+# [HTTP Public Key Pinning (HPKP)](https://developer.mozilla.org/de/docs/Web/Security/Public_Key_Pinning)
 ```
 openssl rsa -in your-key-file.key -outform der -pubout | openssl dgst -sha256 -binary | openssl enc -base64
 openssl req -in my-signing-request.csr -pubkey -noout | openssl rsa -pubin -outform der | openssl dgst -sha256 -binary | openssl enc -base64
