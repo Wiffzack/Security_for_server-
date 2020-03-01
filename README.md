@@ -17,7 +17,7 @@ In your site:
 ```
 In your Nginx config:
 ```
- add_header Content-Security-Policy "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/  ";
+ add_header Content-Security-Policy "script-src 'self' https://code.jquery.com/  ";
 ```
 
 # [HTTP Public Key Pinning (HPKP)](https://developer.mozilla.org/de/docs/Web/Security/Public_Key_Pinning)
