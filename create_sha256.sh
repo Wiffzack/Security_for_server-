@@ -6,7 +6,7 @@ if [ -z "$FILES" ]; then
         exit 1
 fi
 
-prefix=$FILES
+prefix=$FILES/
 cd $FILES
 for d in */ ; do
         cd $FILES/$d
