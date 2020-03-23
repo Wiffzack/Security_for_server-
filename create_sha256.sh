@@ -9,7 +9,6 @@ prefix=$FILES
 cd $FILES
 for f in *.js
 do
-        echo $f
         if [[ $f == *.js ]];then
                 path=$(realpath $f)
                 string=${path/#$prefix}
