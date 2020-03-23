@@ -6,6 +6,7 @@ then
         exit 1
 fi
 prefix=$FILES
+cd $FILES
 for f in *.js
 do
         echo $f
