@@ -1,5 +1,8 @@
 echo "First Parameter path to the files"
 
+end=${FILES: -1}
+[ "${end: -1}" == "/" ] && FILES=${FILES::-1}
+
 FILES=$1
 if [ -z "$FILES" ]; then
         echo "No Input"
